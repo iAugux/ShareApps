@@ -5,6 +5,7 @@ import SwiftUI
 
 public enum ShareApp: CaseIterable, Identifiable {
     case xsearch
+    case valens
     case browser
     case player
     case purge
@@ -16,6 +17,8 @@ public enum ShareApp: CaseIterable, Identifiable {
         switch self {
         case .xsearch:
             return .init("xsearch", bundle: .module)
+        case .valens:
+            return .init("valens", bundle: .module)
         case .extractor:
             return .init("xextractor", bundle: .module)
         case .xQR:
@@ -35,6 +38,8 @@ public enum ShareApp: CaseIterable, Identifiable {
         switch self {
         case .xsearch:
             return "xSearch for Safari"
+        case .valens:
+            return "Valens - Widgets for Health"
         case .extractor:
             return "Extractor for Safari"
         case .xQR:
@@ -54,6 +59,8 @@ public enum ShareApp: CaseIterable, Identifiable {
         switch self {
         case .xsearch:
             return "1579902068"
+        case .valens:
+            return "1582356757"
         case .extractor:
             return "1626704817"
         case .xQR:
