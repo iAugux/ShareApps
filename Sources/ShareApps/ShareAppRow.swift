@@ -14,8 +14,8 @@ struct ShareAppRow: View {
                 shareApp.icon
                     .shadow(radius: 0.5)
                 Text(shareApp.name)
+                    .foregroundStyle(.primary)
             }
         }
-        .buttonStyle(.plain)
     }
 }
