@@ -13,7 +13,7 @@ public enum ShareApp: CaseIterable, Identifiable {
     case xQR
     case xReload
 
-    var icon: Image {
+    public var icon: Image {
         switch self {
         case .xsearch:
             return .init("xsearch", bundle: .module)
@@ -34,7 +34,7 @@ public enum ShareApp: CaseIterable, Identifiable {
         }
     }
 
-    var name: String {
+    public var name: String {
         switch self {
         case .xsearch:
             return "xSearch for Safari"
