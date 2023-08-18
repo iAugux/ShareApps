@@ -8,7 +8,7 @@ struct ShareAppRow: View {
 
     public var body: some View {
         Button {
-            Application.shared.open(URL(string: "https://itunes.apple.com/app/id\(shareApp.id)")!)
+            Application.shared.open(URL(string: "https://apps.apple.com/app/apple-store/id\(shareApp.id)?pt=118051329&ct=\(currentAppIdentifier)&mt=8")!)
         } label: {
             HStack {
                 shareApp.icon
@@ -17,5 +17,9 @@ struct ShareAppRow: View {
                     .foregroundColor(.primary)
             }
         }
+    }
+
+    private var currentAppIdentifier: String {
+        Bundle.main.bundleIdentifier?.replacingOccurrences(of: ".", with: "-") ?? "Augus"
     }
 }
