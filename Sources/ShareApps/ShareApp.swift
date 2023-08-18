@@ -7,8 +7,8 @@ public enum ShareApp: CaseIterable, Identifiable {
     case xsearch
     case valens
     case browser
-    case player
     case purge
+    case player
     case extractor
     case xQR
     case xReload
