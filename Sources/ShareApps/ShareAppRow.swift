@@ -3,8 +3,12 @@
 
 import SwiftUI
 
-struct ShareAppRow: View {
+public struct ShareAppRow: View {
     @State var shareApp: ShareApp
+
+    public init(_ shareApp: ShareApp) {
+        self.shareApp = shareApp
+    }
 
     public var body: some View {
         Button {
