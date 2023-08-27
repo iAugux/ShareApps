@@ -6,7 +6,7 @@ import SwiftUI
 public struct ShareAppRow: View {
     @State var shareApp: ShareApp
 
-    public init(_ shareApp: ShareApp) {
+    public init(shareApp: ShareApp) {
         self.shareApp = shareApp
     }
 
