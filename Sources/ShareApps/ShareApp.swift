@@ -7,6 +7,7 @@ public enum ShareApp: CaseIterable, Identifiable {
     case xsearch
     case valens
     case browser
+    case reset
     case purge
     case player
     case extractor
@@ -31,6 +32,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return .init("purge4safari", bundle: .module)
         case .browser:
             return .init("browser4watch", bundle: .module)
+        case .reset:
+            return .init("reset", bundle: .module)
         }
     }
 
@@ -52,6 +55,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return "Purge for Safari"
         case .browser:
             return "Browser for Watch"
+        case .reset:
+            return "Reset - Track with Widgets"
         }
     }
 
@@ -73,6 +78,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return "1619725381"
         case .browser:
             return "6445950258"
+        case .reset:
+            return "6463799353"
         }
     }
 }
