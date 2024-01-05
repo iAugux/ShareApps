@@ -6,10 +6,11 @@ import SwiftUI
 public enum ShareApp: CaseIterable, Identifiable {
     case xsearch
     case valens
+    case navify
     case browser
-    case reset
-    case purge
     case player
+    case purge
+    case reset
     case extractor
     case xQR
     case xReload
@@ -34,6 +35,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return .init("browser4watch", bundle: .module)
         case .reset:
             return .init("reset", bundle: .module)
+        case .navify:
+            return .init("navify", bundle: .module)
         }
     }
 
@@ -57,6 +60,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return "Browser for Watch"
         case .reset:
             return "Reset - Track with Widgets"
+        case .navify:
+            return "Navify - Navigate to Photo"
         }
     }
 
@@ -80,6 +85,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return "6445950258"
         case .reset:
             return "6463799353"
+        case .navify:
+            return "6474376506"
         }
     }
 }
