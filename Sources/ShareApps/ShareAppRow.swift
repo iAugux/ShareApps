@@ -4,11 +4,8 @@
 import SwiftUI
 
 public struct ShareAppRow: View {
-    @State var shareApp: ShareApp
-
-    public init(shareApp: ShareApp) {
-        self.shareApp = shareApp
-    }
+    @State public var shareApp: ShareApp
+    @State private var appName: String?
 
     public var body: some View {
         Button {
@@ -17,8 +14,17 @@ public struct ShareAppRow: View {
             HStack {
                 shareApp.icon
                     .shadow(radius: 0.5)
-                Text(shareApp.name)
+                Text(appName ?? shareApp.name)
                     .foregroundColor(.primary)
+                    .onAppear(perform: {
+                        Task {
+                            do {
+                                appName = try await Server.appInfo(shareApp.id)
+                            } catch {
+                                print(error)
+                            }
+                        }
+                    })
             }
         }
     }
