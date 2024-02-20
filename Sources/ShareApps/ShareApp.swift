@@ -5,12 +5,12 @@ import SwiftUI
 
 public enum ShareApp: CaseIterable, Identifiable {
     case xsearch
-    case valens
-    case navify
     case browser
     case player
     case pix
     case reader
+    case valens
+    case navify
     case purge
     case reset
     case extractor
