@@ -10,6 +10,7 @@ public enum ShareApp: CaseIterable, Identifiable {
     case browser
     case player
     case pix
+    case reader
     case purge
     case reset
     case extractor
@@ -40,6 +41,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return .init("navify", bundle: .module)
         case .pix:
             return .init("pix", bundle: .module)
+        case .reader:
+            return .init("reader4watch", bundle: .module)
         }
     }
 
@@ -67,6 +70,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return "Navify - Navigate to Photo"
         case .pix:
             return "Pix - Photos for Watch"
+        case .reader:
+            return "Reader for Watch"
         }
     }
 
@@ -94,6 +99,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             return "6474376506"
         case .pix:
             return "6475564605"
+        case .reader:
+            return "6446140905"
         }
     }
 }
