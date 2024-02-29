@@ -15,6 +15,8 @@ public enum ShareApp: CaseIterable, Identifiable {
     case reset
     case extractor
     case xQR
+    case https
+    case direct
     case xReload
     case xPassword
 
@@ -46,6 +48,10 @@ public enum ShareApp: CaseIterable, Identifiable {
                 .init("reader4watch", bundle: .module)
         case .xPassword:
                 .init("xpassword", bundle: .module)
+        case .direct:
+                .init("direct", bundle: .module)
+        case .https:
+                .init("https4safari", bundle: .module)
         }
     }
 
@@ -77,6 +83,10 @@ public enum ShareApp: CaseIterable, Identifiable {
             "Reader for Watch"
         case .xPassword:
             "xPassword fror Safari"
+        case .direct:
+            "Direct - Remove Redirection"
+        case .https:
+            "HTTPS for Safari"
         }
     }
 
@@ -108,6 +118,10 @@ public enum ShareApp: CaseIterable, Identifiable {
             "6446140905"
         case .xPassword:
             "1621026622"
+        case .direct:
+            "1672738777"
+        case .https:
+            "6467700989"
         }
     }
 }
