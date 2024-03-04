@@ -19,6 +19,7 @@ public enum ShareApp: CaseIterable, Identifiable {
     case direct
     case xReload
     case xPassword
+    case xFilm
 
     public var icon: Image {
         switch self {
@@ -52,6 +53,8 @@ public enum ShareApp: CaseIterable, Identifiable {
                 .init("direct", bundle: .module)
         case .https:
                 .init("https4safari", bundle: .module)
+        case .xFilm:
+                .init("xfilm", bundle: .module)
         }
     }
 
@@ -87,6 +90,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             "Direct - Remove Redirection"
         case .https:
             "HTTPS for Safari"
+        case .xFilm:
+            "xFilm One-Touch REC &100x Zoom"
         }
     }
 
@@ -122,6 +127,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             "1672738777"
         case .https:
             "6467700989"
+        case .xFilm:
+            "6446798748"
         }
     }
 }
