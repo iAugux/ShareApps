@@ -14,7 +14,7 @@ public struct ShareAppRow: View {
             HStack {
                 shareApp.icon
                     .shadow(radius: 0.5)
-                Text(appName ?? shareApp.name)
+                Text(title)
                     .foregroundColor(.primary)
                     .onAppear(perform: {
                         Task {
@@ -27,6 +27,11 @@ public struct ShareAppRow: View {
                     })
             }
         }
+        .animation(.default, value: title)
+    }
+
+    private var title: String {
+        appName ?? shareApp.name
     }
 
     private var currentAppIdentifier: String {
