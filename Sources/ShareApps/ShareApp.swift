@@ -85,7 +85,7 @@ public enum ShareApp: CaseIterable, Identifiable {
         case .reader:
             "Reader for Watch"
         case .xPassword:
-            "xPassword fror Safari"
+            "xPassword for Safari"
         case .direct:
             "Direct - Remove Redirection"
         case .https:
