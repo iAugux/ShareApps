@@ -10,6 +10,7 @@ public enum ShareApp: CaseIterable, Identifiable {
     case pix
     case reader
     case valens
+    case imagio
     case navify
     case purge
     case reset
@@ -55,6 +56,8 @@ public enum ShareApp: CaseIterable, Identifiable {
                 .init("https4safari", bundle: .module)
         case .xFilm:
                 .init("xfilm", bundle: .module)
+        case .imagio:
+                .init("imagio", bundle: .module)
         }
     }
 
@@ -92,6 +95,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             "HTTPS for Safari"
         case .xFilm:
             "xFilm One-Touch REC &100x Zoom"
+        case .imagio:
+            "Imagio - Reverse Image Search"
         }
     }
 
@@ -129,6 +134,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             "6467700989"
         case .xFilm:
             "6446798748"
+        case .imagio:
+            "6479577243"
         }
     }
 }
