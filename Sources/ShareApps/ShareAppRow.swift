@@ -6,6 +6,7 @@ import SwiftUI
 public struct ShareAppRow: View {
     @State public var shareApp: ShareApp
     @State private var appName: String?
+    public var fetchRemote = true
 
     public var body: some View {
         Button {
@@ -17,6 +18,7 @@ public struct ShareAppRow: View {
                 Text(title)
                     .foregroundColor(.primary)
                     .onAppear(perform: {
+                        guard fetchRemote else { return }
                         Task {
                             do {
                                 appName = try await Server.appInfo(shareApp.id)
