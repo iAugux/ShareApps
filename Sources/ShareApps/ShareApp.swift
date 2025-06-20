@@ -5,16 +5,17 @@ import SwiftUI
 
 public enum ShareApp: CaseIterable, Identifiable {
     case xsearch
-    case browser
     case player
-    case pix
-    case reader
+    case browser
     case valens
     case imagio
+    case extractor
+    case callShield
+    case pix
+    case reader
     case navify
     case purge
     case reset
-    case extractor
     case xQR
     case https
     case direct
@@ -58,6 +59,8 @@ public enum ShareApp: CaseIterable, Identifiable {
                 .init("xfilm", bundle: .module)
         case .imagio:
                 .init("imagio", bundle: .module)
+        case .callShield:
+                .init("callshield", bundle: .module)
         }
     }
 
@@ -97,6 +100,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             "xFilm One-Touch REC &100x Zoom"
         case .imagio:
             "Imagio - Reverse Image Search"
+        case .callShield:
+            "Call Shield: Spam Call Blocker"
         }
     }
 
@@ -136,6 +141,8 @@ public enum ShareApp: CaseIterable, Identifiable {
             "6446798748"
         case .imagio:
             "6479577243"
+        case .callShield:
+            "6744029271"
         }
     }
 }
