@@ -12,21 +12,25 @@ public struct ShareAppRow: View {
         Button {
             Application.shared.open(URL(string: "https://apps.apple.com/app/apple-store/id\(shareApp.id)?pt=118051329&ct=\(currentAppIdentifier)&mt=8")!)
         } label: {
-            HStack {
+            HStack(spacing: 16) {
                 shareApp.icon
+                    .padding(.vertical, 0.1)
                     .shadow(radius: 0.5)
                 Text(title)
                     .foregroundColor(.primary)
-                    .onAppear(perform: {
-                        guard fetchRemote else { return }
-                        Task {
-                            do {
-                                appName = try await Server.appInfo(shareApp.id)
-                            } catch {
-                                print(error)
+                    .if(true) { view in
+                        if #available(iOS 15.0, *) {
+                            view.task {
+                                await fetchRemoteTitle()
                             }
+                        } else {
+                            view.onAppear(perform: {
+                                Task {
+                                    await fetchRemoteTitle()
+                                }
+                            })
                         }
-                    })
+                    }
             }
         }
         .animation(.default, value: title)
@@ -38,5 +42,14 @@ public struct ShareAppRow: View {
 
     private var currentAppIdentifier: String {
         Bundle.main.bundleIdentifier?.replacingOccurrences(of: ".", with: "-") ?? "Augus"
+    }
+
+    private func fetchRemoteTitle() async {
+        guard fetchRemote else { return }
+        do {
+            appName = try await Server.appInfo(shareApp.id)
+        } catch {
+            print(error)
+        }
     }
 }

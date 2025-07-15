@@ -6,6 +6,7 @@ import AppKit
 #elseif os(iOS)
 import UIKit
 #endif
+import SwiftUI
 
 enum Application {
     enum shared {
@@ -15,6 +16,17 @@ enum Application {
 #elseif os(iOS)
             UIApplication.shared.open(url)
 #endif
+        }
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func `if`(_ conditional: Bool, @ViewBuilder content: (Self) -> some View) -> some View {
+        if conditional {
+            content(self)
+        } else {
+            self
         }
     }
 }

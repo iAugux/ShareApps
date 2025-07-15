@@ -20,12 +20,10 @@ public struct ShareAppRows: View {
 }
 
 // MARK: - Previews
-struct ShareAppRows_Previews: PreviewProvider {
-    static var previews: some View {
-        List {
-            Section {
-                ShareAppRows(currentApp: .xReload)
-            }
+#Preview {
+    List {
+        Section {
+            ShareAppRows(currentApp: .xReload)
         }
     }
 }
