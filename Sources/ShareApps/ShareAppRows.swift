@@ -24,6 +24,8 @@ public struct ShareAppRows: View {
     List {
         Section {
             ShareAppRows(currentApp: .xReload)
+        } header: {
+            Image(systemName: "app.gift.fill")
         }
     }
 }

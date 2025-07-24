@@ -12,10 +12,7 @@ public struct ShareAppRow: View {
         Button {
             Application.shared.open(URL(string: "https://apps.apple.com/app/apple-store/id\(shareApp.id)?pt=118051329&ct=\(currentAppIdentifier)&mt=8")!)
         } label: {
-            HStack(spacing: 16) {
-                shareApp.icon
-                    .padding(.vertical, 0.1)
-                    .shadow(radius: 0.5)
+            Label {
                 Text(title)
                     .foregroundColor(.primary)
                     .if(true) { view in
@@ -31,6 +28,9 @@ public struct ShareAppRow: View {
                             })
                         }
                     }
+            } icon: {
+                shareApp.icon
+                    .shadow(radius: 0.5)
             }
         }
         .animation(.default, value: title)
