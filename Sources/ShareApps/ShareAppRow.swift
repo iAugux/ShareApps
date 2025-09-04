@@ -28,10 +28,15 @@ public struct ShareAppRow: View {
                             })
                         }
                     }
+                    .padding(.leading)
             } icon: {
                 shareApp.icon
+                    .resizable()
+                    .frame(width: 48, height: 48)
                     .shadow(radius: 0.5)
             }
+            .padding(.vertical, 4)
+            .padding(.leading, 12)
         }
         .animation(.default, value: title)
     }

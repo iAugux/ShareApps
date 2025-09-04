@@ -15,7 +15,6 @@ public enum ShareApp: CaseIterable, Identifiable {
     case reader
     case navify
     case purge
-    case reset
     case xQR
     case https
     case direct
@@ -40,8 +39,6 @@ public enum ShareApp: CaseIterable, Identifiable {
                 .init("purge4safari", bundle: .module)
         case .browser:
                 .init("browser4watch", bundle: .module)
-        case .reset:
-                .init("reset", bundle: .module)
         case .navify:
                 .init("navify", bundle: .module)
         case .pix:
@@ -79,8 +76,6 @@ public enum ShareApp: CaseIterable, Identifiable {
             "Purge for Safari"
         case .browser:
             "Browser for Watch"
-        case .reset:
-            "Reset - Track with Widgets"
         case .navify:
             "Navify - Navigate to Photo"
         case .pix:
@@ -118,8 +113,6 @@ public enum ShareApp: CaseIterable, Identifiable {
             "1619725381"
         case .browser:
             "6445950258"
-        case .reset:
-            "6463799353"
         case .navify:
             "6474376506"
         case .pix:
