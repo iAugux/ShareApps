@@ -30,13 +30,23 @@ public struct ShareAppRow: View {
                     }
                     .padding(.leading)
             } icon: {
-                shareApp.icon
-                    .resizable()
-                    .frame(width: 48, height: 48)
-                    .shadow(radius: 0.5)
+                ZStack {
+                    Color.clear
+                    shareApp.icon
+                        .resizable()
+                        .padding(-8)
+                        .shadow(radius: 0.5)
+                }
+                .frame(width: 40, height: 40)
             }
-            .padding(.vertical, 4)
-            .padding(.leading, 12)
+            .padding(.leading, 8)
+            .if(true) {
+                if #available(iOS 26.0, *) {
+                    $0.padding(.vertical, 8)
+                } else {
+                    $0
+                }
+            }
         }
         .animation(.default, value: title)
     }
