@@ -12,6 +12,7 @@ public struct ShareAppRow: View {
         Button {
             Application.shared.open(URL(string: "https://apps.apple.com/app/apple-store/id\(shareApp.id)?pt=118051329&ct=\(currentAppIdentifier)&mt=8")!)
         } label: {
+            let offset: CGFloat = 4
             Label {
                 Text(title)
                     .foregroundColor(.primary)
@@ -28,25 +29,19 @@ public struct ShareAppRow: View {
                             })
                         }
                     }
-                    .padding(.leading)
+                    .padding(.leading, offset)
             } icon: {
+                let size = 36 - offset
                 ZStack {
                     Color.clear
                     shareApp.icon
                         .resizable()
-                        .padding(-8)
+                        .padding(-offset)
                         .shadow(radius: 0.5)
                 }
-                .frame(width: 40, height: 40)
+                .frame(width: size, height: size)
             }
-            .padding(.leading, 8)
-            .if(true) {
-                if #available(iOS 26.0, *) {
-                    $0.padding(.vertical, 8)
-                } else {
-                    $0
-                }
-            }
+            .padding(.leading, offset)
         }
         .animation(.default, value: title)
     }
